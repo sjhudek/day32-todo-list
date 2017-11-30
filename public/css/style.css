@@ -1,0 +1,140 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+#cover {
+  /*background: #222 url('../img/stars.jpg') center center no-repeat;*/
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#cover-caption {
+  width: 100%;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5%;
+}
+
+header {
+    height: 80px;
+    padding: 10px;
+    border: 12px double #2009cc;
+    background-color: rgba(117, 42, 172, 0.48);
+    color: #520669;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Rock Salt', cursive;
+}
+
+h2, h3 {
+    font-family: 'Rock Salt', cursive;
+}
+
+@import 'bootstrap.less';
+div.rounded-corners {
+    .border-radius( 5px );
+}
+
+footer {
+    height: 30px;
+    background-color: rgba(117, 42, 172, 0.48);
+    color: #520669;
+    text-align: center;
+    padding-top: 12px;
+    border: 4px solid #2009cc;
+    margin-top: 20px;
+}
+
+.todo-box {
+    border: 4px dashed #2009cc;
+    margin: 20px auto;
+}
+
+.todo-box h2 {
+    border-bottom: 2px dashed black;
+    border-right: 2px dashed black;
+    width: 40%;
+    padding-left: 20px;
+}
+
+.form-box {
+    padding: 20px;
+}
+
+.todo-display {
+    display: flex;
+    margin: 15px;
+}
+
+.todo-display h4 {
+    margin-left: 20px;
+    line-height: 1.2rem;
+}
+
+.complete {
+    color: red;
+    text-decoration: line-through;
+}
+
+.hd-btn {
+    height: 30px;
+    width: auto;
+}
+
+.hd-btn-input {
+    background-color: yellow;
+    color: darkblue;
+    border: 2px solid black;
+    font-size: 14px;
+}
+
+.hd-btn-input:hover {
+    height: 40px;
+    background-color: limegreen;
+    font-weight: 400;
+    border: 4px double rgb(117, 42, 172);
+}
+
+#todo-input {
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid blue;
+    margin-right: 20px;
+}
+
+.saveBtn {
+    background-color: gold;
+    font-size: 14px;
+    border: 3px double black;
+    color: black;
+
+}
+
+.saveBtn:hover {
+    color: white;
+    background-color: darkolivegreen;
+}
+
+.deleteBtn {
+    color: black;
+    background-color: cornflowerblue;
+    border: 2px solid darkblue;
+    font-size: 14px;
+}
+
+.deleteBtn:hover {
+    background-color: blue;
+    color: white;
+}

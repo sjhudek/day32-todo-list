@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-grid.min.css" />
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <title>Quick Todo!</title>
+</head>
+
+<body>
+    <div class="container rounded-corners">
+        <div class="page-header">
+            <h1>My ToDo List</h1>
+        </div>
+        <div class="form-box">
+            <div id="mongoApp">
+
+                <section id="cover">
+                    <div id="cover-caption">
+                        <div id="container" class="container">
+                            <div class="row">
+                                <div class="col-sm-10 offset-sm-1 text-center">
+                                    <div class="info-form">
+                                        <h3>Enter To-Do(s) in the box below. Click on "Create To-Do(s)"</h3>
+                                        <form v-on:submit="createToDo">
+                                            <input id="todo-input" type="text" v-model="newToDo.title" placeholder="Enter a new To-Do" />
+                                            <input class="hd-btn hd-btn-input" type="submit" value="Create To-Do(s)" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <h2>The To-Do's</h2>
+                <div class="todo-box">
+                    <ul class="todo-display" v-for="todo in toDoList" v-bind:key="todo.title">
+                        <li v-show="todo.isActive">
+                            <h4 v-bind:class="{complete: todo.strikeIt}" v-on:click="markStrikeThru(todo)"> ToDo :=: {{todo.title}}<br> {{todo.status.substr(0,1).toUpperCase() + todo.status.substr(1).toLowerCase()}}</h4>
+                            <button class="hd-btn saveBtn" @click="markComplete(todo)">Save Changes</button>
+                            <button class="hd-btn deleteBtn" @click="markDeleted(todo)">Delete To Do</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+        <script src="./js/main.js" type="text/javascript"></script>
+    </body>
+
+
+    </html>
